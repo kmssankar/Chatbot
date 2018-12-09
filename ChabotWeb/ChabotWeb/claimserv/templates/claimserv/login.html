@@ -1,0 +1,49 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">    
+        <script src="{% static '/jquery/jquery-1.8.3.min.js' %}"></script>
+        <script src="{% static '/js/bootstrap.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+<title>Login</title>
+</head>
+
+<body class=" login" data-admin-utc-offset="0">
+<div id="container">   
+    <div id="header">
+     <div id="branding">        
+       <h1 id="site-name"><a href="/fleet/login">Fleet Ordering System</a></h1>
+        </div>
+      </div>
+<div id="content" class="colM">
+<div id="content-main">
+{% block content %}
+  <form class="form-horizontal" role="form" action="" method="post">{% csrf_token %}
+ <div class="form-row "> 
+    <label for="username" >User name:</label>
+       <input type="text" class="form-control" name="username" autofocus required value="" id="username"> 
+    </div>
+    <div class="form-row">
+    <label for="password" >Password:</label>
+
+        <input type="password" class="form-control" name="password"  required value="" id="password">
+    </div>
+    <div class="submit-row">
+        <input type="submit" class="btn btn-primary" value="login" />
+    </div>
+    <input type="hidden" name="next" value="{{ next|escape }}" />
+  </form>
+  {% if form.errors %}
+    <p class="error">Sorry, that's not a valid username or password</p>
+  {% endif %}
+{% endblock %}
+</div>
+<br class="clear" />
+</div>
+ <div id="footer"></div>
+</div>
+</body>
+</html>

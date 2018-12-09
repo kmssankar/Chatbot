@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiml version="1.0.1">
+<category>
+		<pattern>HELLO</pattern>
+		<template>
+			<random>
+				<li>Hi, I am AAC IS outage Assistant.Do you want to know about Todays Outage?</li>
+				<li>Hello to you, I am AAC IS outage Assistant.Do you want information about Todays Outage?</li>
+			</random>
+		</template>
+	</category>
+	<category><pattern>HELLO *</pattern><template><srai>HELLO</srai></template></category>
+	<category><pattern>HI</pattern><template><srai>HELLO</srai></template></category>
+	<category><pattern>HI *</pattern><template><srai>HELLO</srai></template></category>
+	<category><pattern>WHAT IS UP</pattern><template><srai>HELLO</srai></template></category>
+	<category><pattern>WHAT IS UP *</pattern><template><srai>HELLO</srai></template></category>
+<category>	
+ <pattern>OUTAGE</pattern>
+   <that>* DO YOU WANT * ABOUT TODAYS OUTAGE</that>
+   <template>There is an outage in Data Centre.To know further information reply with yes/No ?</template>
+ </category>
+	<category><pattern>IS THERE ANY OUTAGE</pattern><template><srai>OUTAGE</srai></template></category>
+	<category><pattern>* OUTAGE *</pattern><template><srai>OUTAGE</srai></template></category>
+	<category><pattern>IS THER ANY MAINTENANCE HAPPENING</pattern><template><srai>OUTAGE</srai></template></category>
+	<category><pattern>IS THERE * OUTAGE</pattern><template><srai>OUTAGE</srai></template></category>
+	<category><pattern>IS THERE * MAINTENANCE *</pattern><template><srai>OUTAGE</srai></template></category>
+<category>	
+ <pattern>OUTAGENO</pattern>
+   <that>* DO YOU WANT * ABOUT TODAYS OUTAGE</that>
+   <template><random>
+				<li>Thanks for contacting Outage Assistant.</li>
+				<li>Thank you.</li>
+				<li>Thank you have a Nice day ..</li>
+			</random>
+			</template>
+</category>	
+	<category>
+		<pattern>OUTAGENEXT1 *</pattern>
+		<that>THERE IS AN OUTAGE IN * NAME YOU ARE TRYING TO ACCESS</that>
+		<template>
+			<random>
+				<li>Your Application is  </li>
+				<li>Application status you are searching is  </li>
+			</random>
+			<set name="access"><star/></set></template>
+	</category> 
+		<category>
+		<pattern>OUTAGE BYE</pattern>
+		<template>
+			<random>
+				<li>Thanks for contacting Outage Assistant.</li>
+				<li>Thank you.</li>
+				<li>Thank you have a Nice day ..</li>
+			</random>
+		</template>
+	</category>
+	
+<category>	
+  <pattern>OUTAGEFI1YES</pattern>
+   <that>* OUTAGE IN DATA CENTRE * KNOW FURTHER INFORMATION *</that>
+   <template>DC2 SubProd servers Not accessible do you want to know impacted Applications reply with yes/No ?</template>
+   </category>
+	<category><pattern>IS THERE ANY OUTAGE</pattern><template><srai>OUTAGE</srai></template></category>
+	<category><pattern>IS THER ANY MAINTENANCE HAPPENING</pattern><template><srai>OUTAGE</srai></template></category>
+	<category><pattern>IS THERE * OUTAGE</pattern><template><srai>OUTAGE</srai></template></category>
+	<category><pattern>IS THERE * MAINTENANCE *</pattern><template><srai>OUTAGE</srai></template></category>
+<category>	
+ <pattern>OUTAGEFI1NO</pattern>
+   <that>* OUTAGE IN DATA CENTRE * KNOW FURTHER INFORMATION *</that>
+   <template><random>
+				<li>Thanks for contacting Outage Assistant.</li>
+				<li>Thank you.</li>
+				<li>Thank you have a Nice day ..</li>
+			</random>
+    </template>
+</category>	
+<category>	
+ <pattern>OUTAGEFI1IO</pattern>
+   <that>* OUTAGE IN DATA CENTRE * KNOW FURTHER INFORMATION *</that>
+   <template><random>
+				<li>Incorrect Option please try again..</li>
+			 </random>
+   </template>
+ </category>
+ <category>	
+	 <pattern>OUTAGEFI2YES</pattern>
+	   <that>* DO YOU WANT TO KNOW IMPACTED APPLICATIONS *</that>
+	   <template>The Applications impacted are T3 SET Users . Application Status Refreshed within Last 30 mins . Thank you for Contacting Outage Assistant ..</template>
+	 </category>
+		<category><pattern>IS THERE ANY OUTAGE</pattern><template><srai>OUTAGE</srai></template></category>
+		<category><pattern>* OUTAGE *</pattern><template><srai>OUTAGE</srai></template></category>
+		<category><pattern>IS THER ANY MAINTENANCE HAPPENING</pattern><template><srai>OUTAGE</srai></template></category>
+		<category><pattern>IS THERE * OUTAGE</pattern><template><srai>OUTAGE</srai></template></category>
+		<category><pattern>IS THERE * MAINTENANCE *</pattern><template><srai>OUTAGE</srai></template></category>
+	<category>	
+	 <pattern>OUTAGEFI2NO</pattern>
+	   <that>* OUTAGE IN DATA CENTRE * KNOW FURTHER INFORMATION *</that>
+	   <template><random>
+					<li>Thanks for contacting Outage Assistant.</li>
+					<li>Thank you.</li>
+					<li>Thank you have a Nice day ..</li>
+				</random>
+				</template>
+	</category>	
+	<category>	
+	 <pattern>OUTAGEFI3IO</pattern>
+	   <that>* OUTAGE IN DATA CENTRE * KNOW FURTHER INFORMATION *</that>
+	   <template><random>
+					<li>Incorrect Option please Retry</li>
+				</random>
+				</template>
+	</category>
+<category><pattern>YES</pattern><that>* OUTAGE IN DATA CENTRE * KNOW FURTHER INFORMATION *</that><template><srai>OUTAGEFI1YES<star/></srai></template></category>
+<category><pattern>NO</pattern><that>* OUTAGE IN DATA CENTRE * KNOW FURTHER INFORMATION *</that><template><srai>OUTAGEFI1NO<star/></srai></template></category>
+<category><pattern>*</pattern><that>* OUTAGE IN DATA CENTRE * KNOW FURTHER INFORMATION *</that><template><srai>OUTAGEFI1IO<star/></srai></template></category>
+<category><pattern>NO</pattern><that>* DO YOU WANT * ABOUT TODAYS OUTAGE</that><template><srai>OUTAGENO</srai></template></category>
+<category><pattern>YES</pattern><that>* DO YOU WANT * ABOUT TODAYS OUTAGE</that><template><srai>OUTAGE<star/></srai></template></category>
+<category><pattern>YES</pattern><that>* DO YOU WANT TO KNOW IMPACTED APPLICATIONS *</that><template><srai>OUTAGEFI2YES<star/></srai></template></category>
+<category><pattern>NO</pattern><that>* DO YOU WANT TO KNOW IMPACTED APPLICATIONS *</that><template><srai>OUTAGEFI2NO<star/></srai></template></category>
+<category><pattern>*</pattern><that>* DO YOU WANT TO KNOW IMPACTED APPLICATIONS *</that><template><srai>OUTAGEFI2IO<star/></srai></template></category>
+</aiml>
